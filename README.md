@@ -1,5 +1,18 @@
 # Project 7
-# Places that require modifications/implementations
-- Read [the example here](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/kernel.c#L36-L60) to learn how to use the SD card APIs
-- Implement [this part of `create_thread`](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/threads.c#L85) according to the thread creation instructions given in [p7.pdf](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/p7.pdf)
-- You need to modify [this line](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/kernel.c#L107) so that `shell` would be loaded correctly.
+# Recommended steps to proceed for this project
+- Read [the example here](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/kernel.c#L36-L60) to learn how to use the SD card API
+
+- Read/implement these places so that you know how a thread is started from user space:
+  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/shell/z_shell.c#L120
+  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/shell/z_shell.c#L120
+  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/trap_handlers.c#L133-L142
+  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/threads.c#L85
+- How to test: 
+  - Test `shell`
+    - modify [this line](https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/kernel.c#L107) so that `shell.bin` would be loaded into memory correctly.
+  - Test `app1`
+    - fix up the start address of `app1`: https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/app1/memmap#L4
+    - try to start `app1` from shell as described in p7.pdf
+  - Test `app2`
+    - simiar to `app 1`
+  
