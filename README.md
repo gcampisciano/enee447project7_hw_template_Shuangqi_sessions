@@ -4,7 +4,7 @@
 
 - Read/implement these places so that you know how a thread is started from user space:
   - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/shell/z_shell.c#L120
-  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/shell/z_shell.c#L120
+  - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/shell/u_syscalls.c#L119-L132
   - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/trap_handlers.c#L133-L142
   - https://github.com/sklaw/enee447project7_hw_template_Shuangqi_sessions/blob/master/threads.c#L85
 - How to test: 
