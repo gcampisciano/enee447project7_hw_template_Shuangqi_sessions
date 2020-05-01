@@ -1,5 +1,6 @@
 
 #include "os.h"
+#include "SDCard.h"
 
 
 extern	long stack_address_runningthread;
@@ -82,7 +83,16 @@ create_thread(char *name, char *filename, long thread_address)
 		tp->name[NAMESIZE-1] = '\0';
 	} else {
 
-		// Your Code goes here
+		// Read SD Card and place contents at thread_address
+		uint32_t bytesRead;
+		
+		HANDLE fHandle = sdCreateFile(filename, GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);
+		if (fHandle != 0 && fHandle <= 8) {
+			log("Reading file into buf at", (long)buf);
+			log(filename, NOVAL);
+			sdReadFile(fHandle, thread_address, 1024, &bytesRead, 0)
+			sdCloseHandle(fHandle);
+		}
 
 		tp = (struct tcb *)LL_POP(tfree);
 		if (tp == (struct tcb *)NULL) {
