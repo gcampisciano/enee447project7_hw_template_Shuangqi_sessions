@@ -138,10 +138,10 @@ trap_handler(unsigned long r0, unsigned long r1, unsigned long r2)
 
 			// create threads
 		
-			if(strncmp(r1 "APP1.BIN", 8) == 0) { // If APP1 use address 0x0050_0000
+			if(r1 == "APP1.BIN") { // If APP1 use address 0x0005_0000
 				create_thread(r0, r1, 0x00050000);
-			} else if(strncmp(r1, "APP2.BIN", 8) == 0) { // If APP2 use address 0x0060_0000
-				create_thread(r0, r1, 0x00600000);
+			} else if(r1 == "APP2.BIN") { // If APP2 use address 0x0006_0000
+				create_thread(r0, r1, 0x00060000);
 			}
 
 			return 0;
