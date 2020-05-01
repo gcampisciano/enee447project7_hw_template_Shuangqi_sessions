@@ -104,7 +104,7 @@ init_kernel()
 	}
 
 	init_threads();
-	create_thread("Eggshell", "shell.bin", 0x00000000);	// need to decide where to put it (don't use 0x00000000)
+	create_thread("Eggshell", "shell.bin", 0x40000000);	// create shell at 0x4000_0000
 
     // wake up
 	log("...", NOVAL);
