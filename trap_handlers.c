@@ -136,8 +136,13 @@ trap_handler(unsigned long r0, unsigned long r1, unsigned long r2)
 			data.num = r0;
 			log(data.name, NOVAL);
 
-			// create thread at address 0x4000_0000
-			create_thread(r0, r1, 0x40000000);
+			// create threads
+		
+			if(r0 == "APP1.BIN") { // If APP1 use address 0x4100_0000
+				create_thread(r0, r1, 0x41000000);
+			} else if(r0 == "APP2.BIN") { // If APP2 use address 0x4200_0000
+				create_thread(r0, r1, 0x42000000);
+			}
 
 			return 0;
 			break;
