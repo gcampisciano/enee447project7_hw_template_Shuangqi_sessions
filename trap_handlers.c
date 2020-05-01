@@ -136,7 +136,8 @@ trap_handler(unsigned long r0, unsigned long r1, unsigned long r2)
 			data.num = r0;
 			log(data.name, NOVAL);
 
-			// YOUR CODE GOES HERE
+			// create thread at address 0x4000_0000
+			create_thread(r0, r1, 0x40000000);
 
 			return 0;
 			break;
